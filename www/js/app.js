@@ -1,3 +1,6 @@
+var firebaseUrl = "https://mypersonalbooster.firebaseio.com/";
+var fbRef = new Firebase(firebaseUrl);
+
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
