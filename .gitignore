@@ -40,6 +40,8 @@ platforms/
 plugins/
 
 # Created by .ignore support plugin (hsz.mobi)
+.idea
+.idea/
 **/.idea/workspace.xml
 **/.idea/tasks.xml
 *.iws
