@@ -1,8 +1,44 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, $rootScope, $state) {
 
-  .controller('landingCtrl', function($scope) {})
+  $scope.$on('$ionicView.enter', function() {
+    init();
+  });
+
+  function init() {
+    if ($rootScope.mode === 0 || $rootScope.mode === 1) {
+      $scope.currentUser = $rootScope.user;
+    }
+    else {
+      $state.go('welcome');
+    }
+  }
+
+
+})
+
+  .controller('landingCtrl', function($scope, $rootScope, $state) {
+    $scope.selectMode = function(mode){
+      // 0 - WW Member
+      // 1 - Booster/Friend
+      $rootScope.mode = mode;
+      if(mode === 0){
+        $rootScope.user = {
+          type: "member",
+          name: "Jannifer"
+        };
+      }
+      else{
+        $rootScope.user = {
+          type: "booster",
+          name: "Json Saber"
+        };
+      }
+      $state.go("tab.dash");
+    }
+
+  })
 
 
   .controller('ChatsCtrl', function($scope, Chats) {
