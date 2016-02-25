@@ -1,5 +1,24 @@
 angular.module('starter.services', [])
 
+  .factory('BoostSvc', function($firebaseObject){
+     return  {
+      sendBoost: sendBoost,
+       getBoosts: getBoosts
+    };
+
+    function sendBoost(toMember, fromMember, message ){
+      var obj = {
+        message: message,
+        from: fromMember.name,
+        timestamp: Firebase.ServerValue.TIMESTAMP
+      };
+      fbRef.child("members").child(toMember).child("inbox").push(obj);
+    }
+
+    function getBoosts(){
+
+    }
+  })
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
