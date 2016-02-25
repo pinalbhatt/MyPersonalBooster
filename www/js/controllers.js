@@ -1,9 +1,28 @@
 angular.module('starter.controllers', [])
 
-  .controller('DashCtrl', function($scope) {})
-  .controller('landingCtrl', function($scope) {})
+
+
   .controller('followingCtrl', function($scope) {
     $scope.following = [{name : "gerald brun", theme: "do it!", avatar:"img/ben.png"},{name : "Elias Yousef", theme: "do it!", avatar:"img/adam.jpg"},{name : "Pinal Bhatt", theme: "do it!", avatar:"/img/max.png"},{name : "Yvonne Woods", theme: "do it!", avatar:"img/mike.png"},{name : "Jason Saber", theme: "do it!", avatar:"img/perry.png"}];
+
+.controller('DashCtrl', function($scope, $rootScope, $state) {
+
+  $scope.$on('$ionicView.enter', function() {
+    init();
+  });
+
+  function init() {
+    if ($rootScope.mode === 0 || $rootScope.mode === 1) {
+      $scope.currentUser = $rootScope.user;
+    }
+    else {
+      $state.go('welcome');
+    }
+  }
+
+
+})
+
 
   })
 
