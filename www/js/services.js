@@ -1,4 +1,7 @@
 angular.module('starter.services', [])
+  .factory('Auth', function($firebaseAuth) {
+    return $firebaseAuth(fbRef);
+  })
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
@@ -48,3 +51,6 @@ angular.module('starter.services', [])
     }
   };
 });
+
+var firebaseUrl = "https://mypersonalbooster.firebaseio.com/";
+var fbRef = new Firebase(firebaseUrl);
