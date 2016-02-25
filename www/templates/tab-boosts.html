@@ -1,0 +1,31 @@
+<ion-view view-title="Boosts">
+<div style="margin-top:40px">
+  <a class="item item-avatar" href="#">
+    <img ng-src="{{user.avatar}}">
+    <h2>{{user.name}}</h2>
+    <p>{{user.theme}}</p>
+  </a>
+</div>
+  <ion-content style="margin-top:68px;background: #F6F6F6;text-align:center">
+    <div style="padding:5px 100px;margin-top:30px">
+      <div class="list"  ng-repeat="template in templates" style="background: #FFFFFF;border: 2px solid rgba(155,155,155,0.80);border-radius: 2px;text-align:center" ng-click="">
+        {{template.content}}
+      </div>
+    </div>
+    <button ng-show="!show" class="button button-positive" style="border-radius:15px;margin-top:15px" ng-click="show=!show">send custom message</button>
+    <div ng-show="show">
+        <input type="text" ng-model="templateText" style="display:block">
+        <button class="button button-positive" style="border-radius:15px;margin-top:15px" ng-click="send();show=!show">send</button>
+    </div>
+  </ion-content>
+</ion-view>
+
+
+/* Rectangle 44 Copy 5: */
+background: #FFFFFF;
+border: 2px solid rgba(155,155,155,0.80);
+border-radius: 10px;
+
+
+/* Bg: */
+background: #F6F6F6;
