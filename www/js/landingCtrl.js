@@ -7,30 +7,26 @@ angular.module('starter.controllers')
       $rootScope.member = {
         id: "member1",
         name: "Jannifer",
-        img: "img/jeniffer.png"
+        theme: "really in need of motivation!",
+        avatar: "img/jeniffer.png"
       };
 
       $rootScope.booster = {
         id: "b002",
         name: "Elias Yousef",
-        img: "img/elias.png"
+        theme: "always dynamic",
+        avatar: "img/elias.png"
       };
 
       if(mode === 0){
-        $rootScope.user = {
-          type: "member",
-          name: "Jannifer"
-        };
+        $rootScope.user = $rootScope.member;
         $state.go("tab.dash");
       }
       else{
-        $rootScope.user = {
-          type: "booster",
-          name: "Elias Yousef"
-        };
+        $rootScope.user = $rootScope.booster;
         $state.go("tab.following");
       }
-      BoostSvc.sendBoost("some message looks good. how r u?");
+      //BoostSvc.sendBoost("some message looks good. how r u?");
        //
     }
 

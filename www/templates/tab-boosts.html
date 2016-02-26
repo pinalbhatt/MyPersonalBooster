@@ -8,13 +8,13 @@
 </div>
   <ion-content style="margin-top:68px;background: #F6F6F6;text-align:center">
     <div style="padding:5px 100px;margin-top:30px">
-      <div class="list"  ng-repeat="template in templates" style="background: #FFFFFF;border: 2px solid rgba(155,155,155,0.80);border-radius: 2px;text-align:center" ng-click="">
+      <div class="list"  ng-repeat="template in templates" style="background: #FFFFFF;border: 2px solid rgba(155,155,155,0.80);border-radius: 2px;text-align:center" ng-click="sendBoot(template.content)">
         {{template.content}}
       </div>
     </div>
     <button ng-show="!show" class="button button-positive" style="border-radius:15px;margin-top:15px" ng-click="show=!show">send custom message</button>
     <div ng-show="show">
-        <input type="text" ng-model="templateText" style="display:block">
+        <input type="text" ng-model="custom.boostMsg" style="display:block">
         <button class="button button-positive" style="border-radius:15px;margin-top:15px" ng-click="send();show=!show">send</button>
     </div>
   </ion-content>
