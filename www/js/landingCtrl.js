@@ -28,6 +28,12 @@ angular.module('starter.controllers')
       }
       //BoostSvc.sendBoost("some message looks good. how r u?");
        //
+
+      $scope.$on('$ionicView.enter', function() {
+        $scope.messages = BoostSvc.getBoosts();
+        $scope.messages.reverse();
+      });
+
     }
 
   });
