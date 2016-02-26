@@ -1,5 +1,9 @@
 angular.module('starter.controllers')
   .controller('landingCtrl', function($scope, $rootScope, $state, BoostSvc) {
+
+    $scope.prepData = function() {
+      BoostSvc.sendDemoBoosts();
+    }
     $scope.selectMode = function(mode){
       // 0 - WW Member
       // 1 - Booster/Friend
