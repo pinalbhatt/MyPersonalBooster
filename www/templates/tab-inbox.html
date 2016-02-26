@@ -1,15 +1,25 @@
 <ion-view view-title="Inbox">
   <ion-content>
-    <div ng-repeat="boost in boosts | orderBy: '-timestamp'" style="padding : 10px 30px;">
-      <div style="margin-top:40px">
-        <a class="item item-avatar" href="#" style="border-radius : 5px">
-          <img ng-src="{{boost.from.avatar}}">
-          <h2>{{boost.from.name}}</h2>
-          <p>{{boost.message}}</p>
-          <p>{{boost.timestamp | date : 'medium'}}</p>
+    <div>
+      <a class="item item-avatar" href="#">
+        <img ng-src="{{user.avatar}}">
+        <h2>{{user.name}}</h2>
+        <p>{{user.theme}}</p>
+      </a>
+    </div>
+    <div style="margin-top:10px">
+      <div ng-repeat="boost in boosts | orderBy: '-timestamp'" style="padding : 10px 30px;">
+        <div class="animated fadeIn" style="margin-top:30px;{{$index == 0 ? 'border : 3px red solid':''}}">
+          <a class="item item-avatar" href="#" style="border-radius : 5px">
+            <img ng-src="{{boost.from.avatar}}">
+            <h2>{{boost.from.name}}</h2>
+            <p>{{boost.message}}</p>
+            <p>{{boost.timestamp | date : 'medium'}}</p>
 
-        </a>
+          </a>
+        </div>
       </div>
     </div>
+
   </ion-content>
 </ion-view>

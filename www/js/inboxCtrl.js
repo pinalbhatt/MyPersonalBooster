@@ -1,6 +1,6 @@
 angular.module('starter.controllers')
-  .controller('inboxCtrl', function($scope, BoostSvc) {
-
+  .controller('inboxCtrl', function($scope, BoostSvc, $rootScope) {
+    $rootScope.isNew = false;
     $scope.$on('$ionicView.enter', function() {
       init();
     });
@@ -9,6 +9,7 @@ angular.module('starter.controllers')
         $scope.boosts = BoostSvc.getBoosts();
         $scope.boosts.reverse();
       });
+
      /* $scope.boosts = [
         {
           "from": {
