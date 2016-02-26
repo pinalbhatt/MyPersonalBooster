@@ -38,10 +38,10 @@ angular.module('starter.services', [])
       sender = {
         name: "Adam Mark",
         id: "000",
-        avatar: "img/adam.jpg",
+        avatar: "img/one.png",
         theme: ""
       };
-      msg = "message from Adam";
+      msg = "Just had an amazing 2 Point breakfast! Thinking of u!!! :)";
       sendBoost(msg, sender);
 
       sender = {
@@ -50,7 +50,7 @@ angular.module('starter.services', [])
         avatar: "img/ben.png",
         theme: ""
       };
-      msg = "message from Mike";
+      msg = "Don’t give in to temptation!!";
       sendBoost(msg, sender);
 
       sender = {
@@ -59,7 +59,7 @@ angular.module('starter.services', [])
         avatar: "img/operah.png",
         theme: ""
       };
-      msg= "test";
+      msg= "Bread’s got nothing on you! Let’s do this together!";
 
       sendBoost(msg, sender);
 
