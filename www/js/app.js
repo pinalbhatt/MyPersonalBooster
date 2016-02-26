@@ -52,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     views: {
       'tab-boosts': {
         templateUrl: 'templates/tab-boosts.html',
-        controller: 'DashCtrl'
+        controller: 'boostsCtrl'
       }
     }
   })
