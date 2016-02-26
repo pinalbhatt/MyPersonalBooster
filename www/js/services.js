@@ -1,21 +1,32 @@
 angular.module('starter.services', [])
 
-  .factory('BoostSvc', function($firebaseObject){
+  .factory('BoostSvc', function($firebaseObject, $rootScope){
      return  {
       sendBoost: sendBoost,
        getBoosts: getBoosts
     };
 
-    function sendBoost(toMember, fromMember, message ){
+    function sendBoost(message,toMember, fromMember ){
+      if(toMember === undefined){
+        toMember = $rootScope.member;
+      }
+      if(fromMember === undefined){
+        fromMember = $rootScope.booster;
+      }
       var obj = {
         message: message,
-        from: fromMember.name,
+        from: fromMember,
         timestamp: Firebase.ServerValue.TIMESTAMP
       };
-      fbRef.child("members").child(toMember).child("inbox").push(obj);
+      fbRef.child("members").child(toMember.id).child("inbox").push(obj);
     }
 
-    function getBoosts(){
+    function getBoosts(forMember){
+      if(forMember === null){
+        forMember = $rootScope.member;
+      }
+
+      return $firebaseObject(fbRef.child("members").child(forMember.id).child("inbox"));
 
     }
   })

@@ -4,20 +4,34 @@ angular.module('starter.controllers')
       // 0 - WW Member
       // 1 - Booster/Friend
       $rootScope.mode = mode;
+      $rootScope.member = {
+        id: "member1",
+        name: "Jannifer",
+        img: "img/jeniffer.png"
+      };
+
+      $rootScope.booster = {
+        id: "b002",
+        name: "Elias Yousef",
+        img: "img/elias.png"
+      };
+
       if(mode === 0){
         $rootScope.user = {
           type: "member",
           name: "Jannifer"
         };
+        $state.go("tab.dash");
       }
       else{
         $rootScope.user = {
           type: "booster",
-          name: "Json Saber"
+          name: "Elias Yousef"
         };
+        $state.go("tab.following");
       }
-      BoostSvc.sendBoost("member1", $rootScope.user, "some message looks good. how r u?")
-      $state.go("tab.dash");
+      BoostSvc.sendBoost("some message looks good. how r u?");
+       //
     }
 
-  })
+  });
