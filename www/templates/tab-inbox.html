@@ -1,0 +1,15 @@
+<ion-view view-title="Inbox">
+  <ion-content>
+    <div ng-repeat="boost in boosts" style="padding : 10px 30px;">
+      <div style="margin-top:40px">
+        <a class="item item-avatar" href="#" style="border-radius : 5px">
+          <img ng-src="{{boost.from.avatar}}">
+          <h2>{{boost.from.name}}</h2>
+          <p>{{boost.message}}</p>
+          <p>{{boost.timestamp | date : 'medium'}}</p>
+
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
