@@ -3,30 +3,34 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+<ion-tabs class="tabs-icon-top tabs-icon-only tabs-color-active-positive">
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Boosts" icon-off="ion-paper-airplane" icon-on="ion-paper-airplane" href="#/tab/boosts">
-    <ion-nav-view name="tab-boosts"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Chats Tab -->
-  <ion-tab title="Following" icon-off="ion-ios-book" icon-on="ion-ios-book" href="#/tab/following">
-    <ion-nav-view name="tab-following"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Account Tab -->
-  <ion-tab title="Boosters" icon-off="ion-ios-person" icon-on="ion-ios-person" href="#/tab/boosters">
-    <ion-nav-view name="tab-boosters"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Account Tab -->
-  <ion-tab title="Inbox" icon-off="ion-flash" icon-on="ion-flash" href="#/tab/inbox">
+  <ion-tab title="" icon-off="ion-flash" icon-on="ion-flash" href="#/tab/inbox">
     <ion-nav-view name="tab-inbox"></ion-nav-view>
   </ion-tab>
 
+  <!-- Following Tab -->
+  <ion-tab title="" icon-off="ion-ios-book" icon-on="ion-ios-book" href="#/tab/following">
+    <ion-nav-view name="tab-following"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Dashboard Tab -->
+  <ion-tab title="" icon-off="ion-paper-airplane" icon-on="ion-paper-airplane" href="#/tab/boosts">
+    <ion-nav-view name="tab-boosts"></ion-nav-view>
+  </ion-tab>
+
+
+
   <!-- Account Tab -->
-  <ion-tab title="Settings" icon-off="ion-ios-gear" icon-on="ion-ios-gear" href="#/tab/settings">
+  <ion-tab title="" icon-off="ion-ios-person" icon-on="ion-ios-person" href="#/tab/boosters">
+    <ion-nav-view name="tab-boosters"></ion-nav-view>
+  </ion-tab>
+
+
+
+
+  <!-- Account Tab -->
+  <ion-tab title="" icon-off="ion-ios-gear" icon-on="ion-ios-gear" href="#/tab/settings">
     <ion-nav-view name="tab-settings"></ion-nav-view>
   </ion-tab>
 

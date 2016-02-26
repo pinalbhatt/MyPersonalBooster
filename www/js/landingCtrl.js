@@ -6,7 +6,7 @@ angular.module('starter.controllers')
       $rootScope.mode = mode;
       $rootScope.member = {
         id: "member1",
-        name: "Jannifer",
+        name: "Jennifer",
         theme: "really in need of motivation!",
         avatar: "img/jeniffer.png"
       };
