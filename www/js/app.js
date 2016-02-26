@@ -60,7 +60,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.inbox', {
       url: '/inbox',
       views: {
-        'tab-boosts': {
+        'tab-inbox': {
           templateUrl: 'templates/tab-inbox.html',
           controller: 'inboxCtrl'
         }

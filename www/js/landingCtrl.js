@@ -20,7 +20,7 @@ angular.module('starter.controllers')
 
       if(mode === 0){
         $rootScope.user = $rootScope.member;
-        $state.go("tab.dash");
+        $state.go("tab.inbox");
       }
       else{
         $rootScope.user = $rootScope.booster;
