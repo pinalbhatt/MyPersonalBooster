@@ -8,8 +8,11 @@
 </div>
   <ion-content style="margin-top:68px;background: #F6F6F6;text-align:center">
     <div style="padding:5px 100px;margin-top:30px">
-      <div class="list"  ng-repeat="template in templates" style="background: #FFFFFF;border: 2px solid rgba(155,155,155,0.80);border-radius: 2px;text-align:center" ng-click="sendBoot(template.content)">
-        {{template.content}}
+      <div class="list boost-template"  ng-repeat="template in templates" style="background-color: {{template.color}};border-radius: 5px;text-align:center; height:5em" ng-click="sendBoot(template.content)">
+        <div style="padding:20px;font-size: 20px;">
+          {{template.content}}
+        </div>
+
       </div>
     </div>
     <button ng-show="!show" class="button button-positive" style="border-radius:15px;margin-top:15px" ng-click="show=!show">send custom message</button>
@@ -19,3 +22,5 @@
     </div>
   </ion-content>
 </ion-view>
+
+

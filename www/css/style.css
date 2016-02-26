@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+.boost-template{
+  border: 1px solid rgba(20,155,155,0.80);
+}
+.boost-template:hover{
+  cursor : pointer;
+  border: 5px solid rgba(20,155,155,0.80);
+}
