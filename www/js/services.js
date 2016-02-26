@@ -3,10 +3,11 @@ angular.module('starter.services', [])
   .factory('BoostSvc', function( $rootScope, $firebaseObject, $firebaseArray){
      return  {
       sendBoost: sendBoost,
-       getBoosts: getBoosts
+       getBoosts: getBoosts,
+       sendDemoBoosts: sendDemoBoosts
     };
 
-    function sendBoost(message,toMember, fromMember ){
+    function sendBoost(message,fromMember, toMember ){
       if(toMember === undefined){
         toMember = $rootScope.member;
       }
@@ -28,6 +29,39 @@ angular.module('starter.services', [])
       var inboxRef = fbRef.child("members").child(forMember.id).child("inbox");
       var query = inboxRef.orderByChild("timestamp").limitToLast(10);
       return $firebaseArray(query);
+
+    }
+
+    function sendDemoBoosts(){
+
+      var sender, msg;
+      sender = {
+        name: "Adam Mark",
+        id: "000",
+        avatar: "img/one.png",
+        theme: ""
+      };
+      msg = "Just had an amazing 2 Point breakfast! Thinking of u!!! :)";
+      sendBoost(msg, sender);
+
+      sender = {
+        name: "Mike Ben",
+        id: "000",
+        avatar: "img/ben.png",
+        theme: ""
+      };
+      msg = "Don’t give in to temptation!!";
+      sendBoost(msg, sender);
+
+      sender = {
+        name: "Operah Winfrey",
+        id: "000",
+        avatar: "img/operah.png",
+        theme: ""
+      };
+      msg= "Bread’s got nothing on you! Let’s do this together!";
+
+      sendBoost(msg, sender);
 
     }
   })

@@ -1,12 +1,16 @@
 angular.module('starter.controllers')
   .controller('landingCtrl', function($scope, $rootScope, $state, BoostSvc) {
+
+    $scope.prepData = function() {
+      BoostSvc.sendDemoBoosts();
+    }
     $scope.selectMode = function(mode){
       // 0 - WW Member
       // 1 - Booster/Friend
       $rootScope.mode = mode;
       $rootScope.member = {
         id: "member1",
-        name: "Jannifer",
+        name: "Jennifer",
         theme: "really in need of motivation!",
         avatar: "img/jeniffer.png"
       };

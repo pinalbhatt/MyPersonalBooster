@@ -6,8 +6,8 @@
     <button ng-click="selectMode(1)" class="button button-block button-positive" style="height:15em">
       Boost
     </button>
-    <ul>
-      <li ng-repeat="message in messages | orderBy: '-timestamp'">{{ message.from.name }}: {{ message.message }}</li>
-    </ul>
+    <button ng-click="prepData()" class="button button-block button-positive" style="height:15em">
+      Prep Data
+    </button>
   </ion-content>
 </ion-view>
