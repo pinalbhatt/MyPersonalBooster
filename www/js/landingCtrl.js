@@ -20,7 +20,7 @@ angular.module('starter.controllers')
 
       if(mode === 0){
         $rootScope.user = $rootScope.member;
-        $state.go("tab.dash");
+        $state.go("tab.inbox");
       }
       else{
         $rootScope.user = $rootScope.booster;
@@ -28,6 +28,12 @@ angular.module('starter.controllers')
       }
       //BoostSvc.sendBoost("some message looks good. how r u?");
        //
+
+      $scope.$on('$ionicView.enter', function() {
+        $scope.messages = BoostSvc.getBoosts();
+        $scope.messages.reverse();
+      });
+
     }
 
   });
